@@ -1,0 +1,174 @@
+/** Add css rules here for your application. */
+
+.outline {
+    /*border: 1px solid grey;*/
+}
+
+.app-frame {
+	border: 1px solid blue;	
+}
+
+.app-emphasize {
+	color:red;
+	background-color:#ffff80;		
+	font-weight:bold;
+}
+
+#logo {
+	vertical-align: text-top;
+}
+
+.app-time {
+	color:blue;
+	background-color:#ffff80;		
+	font-weight:bold;
+}
+.app-distance {
+	color:#000000;
+	background-color:#ffff80;		
+	font-weight:bold;
+}
+
+.app-title {
+	color:blue;
+	font-weight:bold;
+	font-size:large;
+	text-align:center;
+}
+
+.app-title2 {
+	color:blue;
+	font-weight:bold;
+	font-size:medium;
+	text-align:center;
+}
+
+.app-title3 {
+	color:black;
+	font-weight:bold;
+}
+
+#baseAbsolutePanel {
+}
+
+#baseHoriPanel{
+}
+
+#leftVertPanel{
+}
+
+#dataDisplayPanel {
+    background-color:lightgreen;
+}
+
+#controlPanel{
+    background-color:lightblue;
+}
+
+#googleEarthPanel{
+    background-color:red;
+}
+
+#graphPanel{
+	color:#8080c0;
+}
+
+#questionPanel {
+	color:#0080ff;	
+}
+
+#vtChart{
+    /*border: 2px solid black;*/
+	cursor:hand;
+   /*background-color:lightgreen;*/
+}
+
+#stChart{
+    /*border: 2px solid black;*/
+	cursor:hand;
+   /*background-color:lightgreen;*/
+}
+#instructionPanel{
+	text-align:center;
+	background-color:#faf9f7;
+}
+
+#historyPanel{
+    /*height:200px; */
+    /*background-color:black;*/
+}
+
+/* slider css */
+.gwt-SliderBar-shell {
+  border: 2px solid #faf9f7;
+  border-right: 2px solid #848280;
+  border-bottom: 2px solid #848280;
+  background-color: #efebe7;
+  height: 34pt;
+  width: 50%;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-line {
+  border: 1px solid black;
+  background-color: white;
+  height: 4px;
+  width: 95%;
+  top: 22pt;
+  overflow: hidden;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-knob {
+  top: 14pt;
+  width: 11px;
+  height: 21px;
+  z-index: 1;
+  cursor: pointer;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-tick {
+  top: 12pt;
+  width: 1px;
+  height: 8pt;
+  background: black;
+  overflow: hidden;
+}
+.gwt-SliderBar-shell .gwt-SliderBar-label {
+  top: 2pt;
+  font-size: 8pt;
+  cursor: default;
+}
+.gwt-SliderBar-shell-focused {
+}
+.gwt-SliderBar-shell .gwt-SliderBar-line-sliding {
+  background-color: #DDDDDD;
+  cursor: pointer;
+}
+
+/* tab panel css */
+#tabPanel .gwt-TabPanelBottom {
+  /*border-color: #ff8040;*/
+  border-style: solid;
+  overflow: hidden;
+  padding: 0px;
+}
+
+#tabPanel .gwt-TabBarFirst {
+  width: 1px;  /* first tab distance from the left */
+}
+
+#tabPanel .gwt-TabBarRest {
+}
+
+#tabPanel .gwt-TabBarItem {
+  border-collapse: collapse;
+  margin-left: 2px;
+}
+
+#tabPanel .tabTopLeft,
+#tabPanel .tabTopRight {
+  padding: 0px;
+  zoom: 1;
+}
+
+#tabPanel .tabTopLeftInner,
+#tabPanel .tabTopRightInner {
+  width: 1px;
+  height: 1px;
+}

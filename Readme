@@ -1,0 +1,108 @@
+Readme for Traffic School Project
+02/14/2009 by Jiexin Li
+
+========================================
+*Installation:
+========================================
+
+step 1. Install Google plugin for eclipse.
+At Eclipse 3.5(earlier version is similiar), Go Help->Update New Software->Add site "http://dl.google.com/eclipse/plugin/3.5".
+Note that the version number 3.5 in the URL could change to 3.4, 3.3 based on your eclipse version.
+
+From the Google update site, you will find two packages [Plugin] and [SDKs] available for update.
+For best compatibility, I recommend to only install the Plugin from the site and manually 
+configure the SDK located at TrafficSchool/libs/gwt-2.0.1/ later.
+
+step 2. Import the project to eclipse
+
+step 3. Manually configure Google Web Toolkit SDK. You may skip this part if you have GWT SDK alreally installed.
+Right click on the project name in "Package Expl" window on the left side, 
+choose Properties -> Google -> Web Tookit ->, then
+	first, make sure the "Use Google Web Toolkit" item is marked.
+	second, click "Configure SDKs"->"Add"-> Choose folder TrafficSchool/libs/gwt-2.0.1/ 
+	and typein name "GWT-2.0.1".
+	
+
+PS. Tutorial to setup IDE from Google:
+http://code.google.com/webtoolkit/usingeclipse.html#deploying
+
+========================================		
+*Launch the project:
+========================================
+
+Right click on the project name in "Package Expl" window on the left side, choose "Run As ..." -> "... Web Application". 
+If success, a URL will show you where to test your application, which is similiar to 
+http://127.0.0.1:8888/TrafficSchool.html?gwt.codesvr=127.0.0.1:9997
+
+You can open this URL at Firefox, IE or Chrome.
+Remember the first time you test the application on one of these browsers, you will be asked to install 
+the Google Application Plugin for that browser. Just install it, refresh the page and you are good to go.
+
+PS. You don't have to re-run the project each time after some codes are modified in most cases. 
+Just refresh the page and the effects will show. 
+One case you do have to re-run the application is when new library is added 
+and the GWT configuration file say TrafficSchool.gwt.xml is changed.
+
+========================================		
+*Deploy the project:
+========================================		
+
+You just need copy all the contents in the /war folder of your project to your website.
+Say, I upload the the /war folder directly to my site www.example.com/, then I could use URL
+www.example.com/war/TrafficSchool.html to access it. 
+
+One more thing, remember to change the GoogleEarth API key before deploying the project to a website.
+Normally, a localhost API key is used for testing at local. We could change the API key at war/TrafficSchool.html.
+
+========================================		
+*Structure of the project:
+========================================		
+1.--------------------
+src/com.csusm.cs.earth:
+	TrafficSchool.gwt.xml: GWT configuration file for the web application.
+						   You need add <inherits ...> entries here if you want to use imported GWT Libs 
+						   for this project.
+	
+2.--------------------
+src/com.csusm.cs.earth.client:
+	TrafficSchool.java : the Entry for the web application. 
+	MainGUI.java:  It contains all GUI components and responsable to orgnize them together.
+	GEWrapper.java: The GUI component for Google Earth. 
+					It is responsable to initiate Google Earth Plugin and load 3d models.
+	DrivingSimulator.java: The logic part of the drving system. 
+						   It coorperate with GEWrapper to implement driving simulation.
+	DSTChart.java: The GUI component for Distance-Speed-Time chart. 
+	QBaseTemplate: The basic GUI component for Questions of simulations or challenges. 
+				   It provided methods to create Speed Selector, Distance Selector, 
+				   Time Selector, etc, which are the footstones to build a simulation 
+				   question or challenge question.
+					
+		The following 6 classes inherits from QBaseTemplate class:
+		--------------------------------------------------------------
+		QSimulationST.java: the GUI component for first simulation - Adjusting Speed and Time.
+		QSimulationDT.java: the GUI component for second simulation -  Adjusting Distance and Time.
+		QsimulationDrive.java: the GUI component for third simulation - Driving through an intersection.
+		QChallengeST.java: the GUI component for first challenge - Adjusting Speed and Time.
+		QChallengeDT.java: the GUI component for second challenge -  Adjusting Distance and Time.
+		QChallengeDrive.java: the GUI component for third challenge - Driving through an intersection.
+		--------------------------------------------------------------
+	QuestionsPanel.java: It is a collection of Questions of simulations or challenges.
+						 It provides methods to navigate questions back and forth.
+	Utils.java: It provides almost all the constants used in the project.
+	
+3.--------------------
+gwtGEPlugin_src/... : GoogleEarth plugin for GWT. 
+					  Usually we don't need to touch them except we need to transplant 
+					  more functionality from the GE javascript API to GWT.
+
+4.--------------------
+war/
+	images/ : all images resources go to here.
+	TrafficSchool.html : the main page of the web application. You can change the Google Earth API key here.
+	TrafficSchool.css : all the CSS styles used in the project.
+	
+5.--------------------
+sketchup/
+	Sketchup 3D models for street and traffic lights. Use Sketchup 7.0 or above to edit them.
+
+ 
